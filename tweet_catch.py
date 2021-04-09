@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov 4 13:27:19 2018
-
-@author: bugur
-"""
-
 from tweepy import API
 from tweepy import Cursor
 from tweepy import OAuthHandler
@@ -68,7 +61,7 @@ class TweetAnalyze():
 
         return df
 
-### DRIVER METHOD TO EXECUTE ON ACTIVE PATH ###
+### DRIVER METHOD ###
 if __name__ == '__main__':
     
     twitter_client = TwitterClient()
