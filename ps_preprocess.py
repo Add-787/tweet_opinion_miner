@@ -1,16 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Dec 14 06:53:34 2018
-
-@author: bugur
-"""
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import string
 from nltk.stem import SnowballStemmer
 
-### PREPROCESSING THE TWEET FOR ANALYSIS ###
+### PREPROCESSING ###
 def porter_process(tweet, lower_case = True, stem = True, stop_words = True, gram = 2):
     #When lower_case parameter is present
     if lower_case:
@@ -36,7 +30,7 @@ def porter_process(tweet, lower_case = True, stem = True, stop_words = True, gra
         words = [stemmer.stem(word) for word in words]
     return words
 
-### SNOWBALL PROCESSING, SIMPLE AND QUICKER ###
+### SNOWBALL PROCESSING ###
 def snowball_process(tweet):
     tweet = tweet.translate(str.maketrans('', '', string.punctuation))
     tweet = [word for word in tweet.split() if word.lower() not in stopwords.words('english')]
